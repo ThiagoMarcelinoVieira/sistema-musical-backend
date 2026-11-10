@@ -1,0 +1,489 @@
+/* Variáveis */
+:root {
+  --primary: #2c3e50;
+  --blue: #3498db;
+  --blue-dark: #2980b9;
+  --green: #27ae60;
+  --red: #e74c3c;
+  --red-dark: #c0392b;
+  --bg: #f0f2f5;
+  --surface: #ffffff;
+  --border: #dde1e7;
+  --text: #2c3e50;
+  --text-muted: #6c757d;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+  --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--primary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.page-header p {
+  color: var(--text-muted);
+}
+
+h2 {
+  font-size: 1.75rem;
+  color: var(--primary);
+  padding-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+form {
+  background-color: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+.btn-primary,
+.btn-edit,
+.btn-delete,
+.btn-music,
+.btn-back,
+.btn-youtube {
+  display: inline-flex;
+  padding: 0.55rem 1.1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: var(--surface);
+}
+
+.btn-primary:hover {
+  background: var(--blue-dark);
+  transform: translateY(-1px);
+}
+
+.btn-back {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.page-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 2px solid var(--border);
+  flex-wrap: wrap;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.page-header-bar h2 {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.page-header-bar .header-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.table-container {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background: var(--primary);
+  color: #fff;
+  text-transform: uppercase;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* AULA 1 - Login */
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-card {
+  background: var(--surface);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  max-width: 400px;
+}
+
+.login-card form {
+  background: none;
+  box-shadow: none;
+}
+
+.login-header {
+  text-align: center;
+}
+
+.login-card .btn-primary {
+  width: 100%;
+}
+
+.login-hint {
+  background: var(--bg);
+  text-align: center;
+  padding: 1rem;
+  border-radius: var(--radius);
+}
+
+/* AULA 1 - Index */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.menu-card {
+  padding-block: 1rem;
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s;
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+}
+
+.menu-card a {
+  display: block;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.menu-icon {
+  font-size: 2.5rem;
+}
+
+.menu-header {
+  text-align: center;
+  margin-block: 3rem;
+}
+
+/* AULA 2 - Listagem Músicas */
+.listagem-musicas {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.btn-edit {
+  background: var(--blue);
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background-color: var(--blue-dark);
+}
+
+.btn-delete {
+  background: var(--red);
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: var(--red-dark);
+}
+
+.btn-youtube {
+  background: #ff0000;
+  color: #fff;
+}
+
+.btn-youtube:hover {
+  background-color: #cc0000;
+}
+
+.filters {
+  background: var(--surface);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.filter-form {
+  box-shadow: none;
+}
+
+.filter-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.filter-item {
+  flex: 1;
+  min-width: 180px;
+}
+
+.filter-item label {
+  font-size: 0.82rem;
+}
+
+.col-foto,
+.col-capa {
+  width: 90px;
+  white-space: nowrap;
+}
+
+.col-youtube {
+  width: 110px;
+  white-space: nowrap;
+}
+
+.col-acoes {
+  white-space: nowrap;
+  text-align: left;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.no-image {
+  width: 60px;
+  height: 60px;
+  border: 1.5px dashed var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+/* AULA 3 - Cadastro Artista */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1.5px dashed var(--border);
+  border-radius: 6px;
+}
+
+small {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-block: 1.5rem 1rem;
+  font-weight: 600;
+}
+
+.btn-music {
+  background-color: var(--green);
+  color: #fff;
+}
+
+/* AULA 4 - Cadastro Música */
+input[type="number"],
+input[type="url"],
+input[type="date"] {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-grid .form-group.full {
+  grid-column: 1 / -1;
+}
+
+/* SPRINT 2 */
+.message.success {
+  color: #008720;
+  text-align: center;
+  margin-block: 0.5rem;
+}
+
+.message.error {
+  color: #a0000e;
+  text-align: center;
+  margin-block: 0.5rem;
+}
+
+.current-image img {
+  width: 64px;
+  height: 64px;
+}
+
+.table-thumbnail {
+  width: 60px;
+  object-fit: cover;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  form {
+    padding: 1.25rem;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .filter-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .filter-item {
+    min-width: 100%;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  table {
+    min-width: 560px;
+  }
+  th,
+  td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+  .table-thumbnail,
+  .no-image {
+    width: 48px;
+    height: 48px;
+  }
+  .col-foto,
+  .col-capa {
+    width: 68px;
+  }
+  .action-buttons {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .btn-edit,
+  .btn-delete,
+  .btn-music,
+  .btn-youtube {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.78rem;
+  }
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
